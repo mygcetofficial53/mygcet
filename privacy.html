@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyGCET - Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for MyGCET (GCET Tracker) student application.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/App%20Logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .privacy-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .privacy-title {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: linear-gradient(180deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .privacy-section {
+            margin-bottom: 30px;
+        }
+
+        .privacy-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-2);
+            margin-bottom: 12px;
+            border-left: 3px solid var(--accent-1);
+            padding-left: 12px;
+        }
+
+        .privacy-section p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .privacy-section ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 12px;
+        }
+
+        .privacy-section li {
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .privacy-section li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-1);
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .privacy-section strong {
+            color: var(--text-white);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-2);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: color 0.2s;
+        }
+
+        .back-home:hover {
+            color: var(--accent-1);
+        }
+
+        @media (max-width: 600px) {
+            .privacy-container {
+                padding: 24px;
+            }
+            .privacy-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="bg-canvas">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-lines"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page">
+        <div class="privacy-container">
+            <a href="index.html" class="back-home">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Download
+            </a>
+            
+            <h1 class="privacy-title">Privacy Policy</h1>
+            <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 24px;">Last updated: July 02, 2026</p>
+
+            <div class="privacy-section">
+                <p>This Privacy Policy explains how <strong>GCET Tracker</strong> (also distributed as "MyGCET", referred to as "the App") collects, uses, and protects your information. The App is developed as a student companion utility for students of <strong>G H Patel College of Engineering and Technology (GCET)</strong>.</p>
+                <p>We are committed to ensuring that your academic information and personal data remain safe, secure, and private.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>1. Information We Collect & Process</h2>
+                <p>To provide you with real-time academic updates, GCET Tracker processes and caches certain data. Here is what we collect and why:</p>
+                <ul>
+                    <li><strong>GMS Portal Credentials:</strong> To log you in, the App collects your GMS Portal Enrollment Number and Password. <strong>Crucially, these credentials are stored encrypted locally on your device</strong> (using device-level secure keychain storage) and are sent directly to the official GCET Student Login portal during scraping. They are never transmitted to, stored on, or accessed by our servers.</li>
+                    <li><strong>Academic Records:</strong> The App retrieves and caches your attendance records, timetable schedules, mid-sem exam marks, and pending assignments from the college portal. This data is stored locally to allow offline access.</li>
+                    <li><strong>Phone State Permission (READ_PHONE_STATE):</strong> To ensure login session uniqueness and prevent unauthorized proxy attendance manipulation, the App requests access to read the phone's state. This state is processed 100% locally on the device to generate a secure session key and is never uploaded or shared.</li>
+                    <li><strong>Push Notification Tokens:</strong> The App uses Google Firebase Cloud Messaging (FCM) to send announcements and reminders. We collect an anonymous device identification token to route notifications to your phone.</li>
+                    <li><strong>Payment Processing (Razorpay):</strong> Any secure fee transactions or college event ticket bookings are completed directly through the secure Razorpay Payment Gateway. The App does not collect, process, or store credit card details or bank passwords.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>2. Third-Party Integrations</h2>
+                <p>GCET Tracker utilizes specific third-party APIs and libraries to deliver features. These third parties have their own privacy policies governing their services:</p>
+                <ul>
+                    <li><strong>Google Firebase:</strong> Used for notification routing, crash reports, and performance monitoring. No personally identifiable data is sent to Firebase.</li>
+                    <li><strong>Supabase:</strong> Used to manage app features (like cloud timetable sync, anonymous poll voting, and leaderboard competitions). Academic credentials are never uploaded to Supabase.</li>
+                    <li><strong>Razorpay:</strong> Used for processing secure transactions. All payment detail processing is isolated within Razorpay's certified secure interface.</li>
+                    <li><strong>OpenWeatherMap API:</strong> If enabled, the App fetches general local weather details anonymously to adjust the theme. No precise location history is stored.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>3. Data Protection & Security</h2>
+                <p>Your privacy and data safety are our top priorities:</p>
+                <ul>
+                    <li>All sensitive user credentials (passwords) are saved in encrypted form locally on your device.</li>
+                    <li>No database logs store passwords or private profiles of students.</li>
+                    <li>We do not sell, rent, or trade student data under any circumstances.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>4. App Access Requirements</h2>
+                <p>The App is purely a tool for students. You can delete all locally cached data at any time by logging out of the App or clearing the App's storage from your Android system settings.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>5. Changes to This Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the date at the top of the policy.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>6. Contact Us</h2>
+                <p style="margin-bottom: 8px;">If you have any questions or suggestions about this Privacy Policy, feel free to contact us at:</p>
+                <p style="color: var(--accent-2); font-weight: 600;">mygcet.official.53@gmail.com</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Minimal Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <span>© 2026 MyGCET</span>
+            <span class="dot">•</span>
+            <a href="index.html">Home</a>
+            <span class="dot">•</span>
+            <a href="mailto:mygcet.official.53@gmail.com">mygcet.official.53@gmail.com</a>
+            <span class="dot">•</span>
+            <span>By <strong>Abdullah Kapadia</strong> & <strong>Yusuf Gundarwala</strong></span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
