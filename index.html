@@ -4,186 +4,531 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyGCET - Download</title>
-    <meta name="description" content="MyGCET - The official student app for GCET.">
+    <title>MyGCET — Everything GCET. One App.</title>
+    <meta name="description"
+        content="MyGCET is the all-in-one student planner for GCET — attendance, timetable, results, deadlines & announcements, organised like your neatest notebook.">
+    <meta name="theme-color" content="#faf7ee">
+
+    <meta property="og:title" content="MyGCET — Everything GCET. One App.">
+    <meta property="og:description"
+        content="Attendance, timetable, results & deadlines — organised like the neatest planner you've ever kept.">
+    <meta property="og:image" content="assets/Feature%20Graphic.png">
+    <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/App%20Logo.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="intro-lock">
 
-    <!-- Animated Background -->
-    <div class="bg-canvas">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-        <div class="grid-lines"></div>
-        <svg class="floating-icon fi-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-        </svg>
-        <svg class="floating-icon fi-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-            <path d="M6 12v5c3 3 9 3 12 0v-5" />
-        </svg>
-        <svg class="floating-icon fi-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-        </svg>
-        <svg class="floating-icon fi-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <path d="M12 19l7-7 3 3-7 7-3-3z" />
-            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-        </svg>
-        <svg class="floating-icon fi-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-            <polyline points="14 2 14 8 20 8" />
-        </svg>
-        <svg class="floating-icon fi-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-            <path d="M6 12v5c3 3 9 3 12 0v-5" />
-        </svg>
+    <!-- ===== Intro: someone circles the logo in a notebook ===== -->
+    <div class="intro" id="intro">
+        <div class="intro-stage">
+            <div class="intro-mark">
+                <svg class="intro-circle" viewBox="0 0 260 220" fill="none" aria-hidden="true">
+                    <path class="scribble" pathLength="1"
+                        d="M170 40 C120 22 70 30 46 66 C24 100 32 150 78 174 C128 200 196 190 218 146 C238 106 214 54 160 40 C120 30 96 40 86 58"
+                        stroke="#2f6bff" stroke-width="4" stroke-linecap="round" />
+                </svg>
+                <img class="intro-logo" src="assets/App%20Logo.png" alt="MyGCET logo">
+            </div>
+            <div class="intro-word" aria-label="MyGCET">MyGCET</div>
+            <svg class="intro-underline" viewBox="0 0 300 24" fill="none" aria-hidden="true">
+                <path class="scribble2" pathLength="1" d="M6 15 C60 6 120 20 160 12 C210 3 260 16 294 9"
+                    stroke="#ffcf33" stroke-width="9" stroke-linecap="round" />
+            </svg>
+            <p class="intro-tag">Everything GCET. One App.</p>
+        </div>
+        <button class="intro-skip" id="introSkip" type="button">skip&nbsp;▸</button>
+    </div>
+    <script>document.body.classList.add('intro-lock');</script>
+
+    <!-- ===== Paper background ===== -->
+    <div class="paper-bg" aria-hidden="true">
+        <span class="margin-line"></span>
+        <span class="doodle doodle-star d1">✦</span>
+        <span class="doodle doodle-star d2">✦</span>
+        <span class="doodle d3">↝</span>
     </div>
 
-    <!-- Main Content -->
-    <main class="page">
+    <!-- ===== Nav ===== -->
+    <header class="nav" id="nav">
+        <a href="#top" class="nav-brand">
+            <img src="assets/App%20Logo.png" alt="" class="nav-logo">
+            <span>MyGCET</span>
+        </a>
+        <nav class="nav-tabs">
+            <a href="#features">Features</a>
+            <a href="#week">Your week</a>
+            <a href="#screens">Screens</a>
+            <a href="#get">Get the app</a>
+        </nav>
+        <a href="#get" class="btn-stamp nav-get">Get the app</a>
+    </header>
 
-        <!-- Hero Section -->
+    <main id="top">
+
+        <!-- ===== Hero ===== -->
         <section class="hero">
-            <div class="logo-glass">
-                <img src="assets/App%20Logo.png" alt="MyGCET" class="logo-img">
+            <div class="hero-copy reveal">
+                <span class="pin-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="17" x2="12" y2="22"></line>
+                        <path d="M9 9V5a3 3 0 0 1 6 0v4a5 5 0 0 1 2 4H7a5 5 0 0 1 2-4z"></path>
+                    </svg>
+                    Built by GCET students
+                </span>
+
+                <h1 class="hero-title">
+                    Everything <span class="hl hl-yellow">GCET.</span><br>
+                    One <span class="hl hl-blue">App.</span>
+                </h1>
+
+                <p class="hero-sub">
+                    Your attendance, timetable, results &amp; deadlines —
+                    organised like the neatest planner you’ve ever kept.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#get" class="btn-play">
+                        <img src="assets/playstore.png" width="22" height="22" alt="Google Play logo" aria-hidden="true">
+                        <span class="btn-play-text">
+                            <small>Get it on</small>
+                            <strong>Google Play</strong>
+                        </span>
+                        <span class="soon-flag">soon</span>
+                    </a>
+                    <a href="https://mygcet.vercel.app/" class="btn-outline" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+                            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                        Launch Web&nbsp;/&nbsp;iOS
+                    </a>
+                </div>
+
+                <ul class="hero-checks">
+                    <li><span class="tick">✓</span> 100% Free</li>
+                    <li><span class="tick">✓</span> Works offline</li>
+                    <li><span class="tick">✓</span> Private &amp; secure</li>
+                </ul>
             </div>
-            <span class="badge">GCET STUDENT APP</span>
-            <h1 class="headline">MyGCET</h1>
-            <p class="subline">A simple and reliable way for students<br>to stay academically on track.</p>
-            <span class="version">v2 • Active Build</span>
+
+            <!-- Taped phone photo -->
+            <div class="hero-photo reveal">
+                <span class="annot annot-top">
+                    your whole day,
+                    <br>at a glance!
+                    <svg class="arrow" viewBox="0 0 80 70" fill="none" aria-hidden="true">
+                        <path pathLength="1" d="M8 6 C36 2 66 20 66 54" stroke="#2f6bff" stroke-width="3"
+                            stroke-linecap="round" />
+                        <path pathLength="1" d="M54 46 L66 56 L52 62" stroke="#2f6bff" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+
+                <div class="phone">
+                    <span class="tape tape-l"></span>
+                    <span class="tape tape-r"></span>
+                    <div class="phone-body">
+                        <img src="APP%20SCREEN%20SHOTS/2.png" alt="MyGCET home dashboard" loading="eager">
+                    </div>
+                </div>
+
+                <span class="annot annot-bottom">
+                    live countdown!
+                    <svg class="arrow arrow-flip" viewBox="0 0 80 70" fill="none" aria-hidden="true">
+                        <path pathLength="1" d="M72 8 C44 4 14 22 14 56" stroke="#e0489a" stroke-width="3"
+                            stroke-linecap="round" />
+                        <path pathLength="1" d="M26 48 L14 58 L28 64" stroke="#e0489a" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+            </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta">
-            <a href="MyGcet.apk" class="btn-download" download>
-                <span class="btn-glow"></span>
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48A5.84 5.84 0 0 0 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31A5.983 5.983 0 0 0 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
-                </svg>
-                <span>Download Android (Modern Devices)</span>
-            </a>
-            <a href="MyGcet%20-%20Old%20Phone.apk" class="btn-download-alt" download>
-                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                    <path
-                        d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48A5.84 5.84 0 0 0 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31A5.983 5.983 0 0 0 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
-                </svg>
-                <span>Download Android (For Older Devices)</span>
-            </a>
-            <a href="https://mygcet.vercel.app/" class="btn-web" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                    <line x1="12" y1="17" x2="12" y2="21"></line>
-                </svg>
-                <span>Launch Web App / iOS</span>
-            </a>
-            <p class="upgrade-note">⚠️ <strong>Note:</strong> If you are using the older version, please
-                <strong>uninstall it first</strong> and then download the latest version from here to avoid any issues.
-            </p>
+        <!-- ===== Subject marquee ===== -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <!-- Set 1 -->
+                <span class="tag t-y">Attendance</span>
+                <span class="tag t-b">Timetable</span>
+                <span class="tag t-g">Results</span>
+                <span class="tag t-p">Assignments</span>
+                <span class="tag t-o">Calendar</span>
+                <span class="tag t-b">Materials</span>
+                <span class="tag t-g">Announcements</span>
+                <span class="tag t-y">Leaderboards</span>
+                <!-- Set 2 -->
+                <span class="tag t-y">Attendance</span>
+                <span class="tag t-b">Timetable</span>
+                <span class="tag t-g">Results</span>
+                <span class="tag t-p">Assignments</span>
+                <span class="tag t-o">Calendar</span>
+                <span class="tag t-b">Materials</span>
+                <span class="tag t-g">Announcements</span>
+                <span class="tag t-y">Leaderboards</span>
+                <!-- Set 3 -->
+                <span class="tag t-y">Attendance</span>
+                <span class="tag t-b">Timetable</span>
+                <span class="tag t-g">Results</span>
+                <span class="tag t-p">Assignments</span>
+                <span class="tag t-o">Calendar</span>
+                <span class="tag t-b">Materials</span>
+                <span class="tag t-g">Announcements</span>
+                <span class="tag t-y">Leaderboards</span>
+                <!-- Set 4 -->
+                <span class="tag t-y">Attendance</span>
+                <span class="tag t-b">Timetable</span>
+                <span class="tag t-g">Results</span>
+                <span class="tag t-p">Assignments</span>
+                <span class="tag t-o">Calendar</span>
+                <span class="tag t-b">Materials</span>
+                <span class="tag t-g">Announcements</span>
+                <span class="tag t-y">Leaderboards</span>
+                <!-- Set 5 -->
+                <span class="tag t-y">Attendance</span>
+                <span class="tag t-b">Timetable</span>
+                <span class="tag t-g">Results</span>
+                <span class="tag t-p">Assignments</span>
+                <span class="tag t-o">Calendar</span>
+                <span class="tag t-b">Materials</span>
+                <span class="tag t-g">Announcements</span>
+                <span class="tag t-y">Leaderboards</span>
+                <!-- Set 6 -->
+                <span class="tag t-y">Attendance</span>
+                <span class="tag t-b">Timetable</span>
+                <span class="tag t-g">Results</span>
+                <span class="tag t-p">Assignments</span>
+                <span class="tag t-o">Calendar</span>
+                <span class="tag t-b">Materials</span>
+                <span class="tag t-g">Announcements</span>
+                <span class="tag t-y">Leaderboards</span>
+                <!-- Set 7 -->
+                <span class="tag t-y">Attendance</span>
+                <span class="tag t-b">Timetable</span>
+                <span class="tag t-g">Results</span>
+                <span class="tag t-p">Assignments</span>
+                <span class="tag t-o">Calendar</span>
+                <span class="tag t-b">Materials</span>
+                <span class="tag t-g">Announcements</span>
+                <span class="tag t-y">Leaderboards</span>
+                <!-- Set 8 -->
+                <span class="tag t-y">Attendance</span>
+                <span class="tag t-b">Timetable</span>
+                <span class="tag t-g">Results</span>
+                <span class="tag t-p">Assignments</span>
+                <span class="tag t-o">Calendar</span>
+                <span class="tag t-b">Materials</span>
+                <span class="tag t-g">Announcements</span>
+                <span class="tag t-y">Leaderboards</span>
+            </div>
+        </div>
+
+        <!-- ===== Stats / report card ===== -->
+        <section class="stats">
+            <div class="stat-card reveal">
+                <strong class="count" data-target="10" data-suffix="+">0</strong>
+                <span>modules</span>
+            </div>
+            <div class="stat-card reveal">
+                <strong class="count" data-target="100" data-suffix="%">0</strong>
+                <span>free, forever</span>
+            </div>
+            <div class="stat-card reveal">
+                <strong>v4</strong>
+                <span>active build</span>
+            </div>
+            <div class="stat-card reveal">
+                <strong class="count" data-target="5" data-prefix="&lt;" data-suffix="s">0</strong>
+                <span>avg. load</span>
+            </div>
         </section>
 
-        <!-- Features Section -->
-        <section class="features" id="features">
-            <div class="features-header">
-                <span class="badge">WHAT'S NEW IN V2</span>
-                <h2 class="section-title">Elevate Your Experience</h2>
+        <!-- ===== Features (sticky notes) ===== -->
+        <section class="section" id="features">
+            <div class="section-head reveal">
+                <span class="kicker">what’s inside</span>
+                <h2 class="section-title">Everything, <span class="hl hl-green">neatly filed.</span></h2>
+                <p class="section-lead">Every tool a GCET student needs — pinned exactly where you’d expect it.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
+
+            <div class="notes">
+                <article class="note note-coral reveal">
+                    <span class="pushpin"></span>
+                    <div class="note-ic">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
                     </div>
-                    <h3>Home Screen Refined</h3>
-                    <p>Interactive widgets with quick access to your Attendance, Timetable & Assignments. Smoother login
-                        and improved refresh system.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                    <h3>Digital ID & Dashboard</h3>
+                    <p>Tamper-proof digital ID, live countdowns, and quick actions right on your home screen.</p>
+                </article>
+
+                <article class="note note-indigo reveal">
+                    <span class="pushpin"></span>
+                    <div class="note-ic">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
                             <line x1="16" y1="2" x2="16" y2="6"></line>
                             <line x1="8" y1="2" x2="8" y2="6"></line>
                             <line x1="3" y1="10" x2="21" y2="10"></line>
                         </svg>
                     </div>
-                    <h3>Timetable & Classes</h3>
-                    <p>Cloud-based timetable sharing — upload once, let classmates download instantly. Smart Heads-Up
-                        cards for upcoming lectures.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                    <h3>Smart Timetable</h3>
+                    <p>Cloud-synced schedules auto-dim past lectures. Tap any class for instant attendance impact.</p>
+                </article>
+
+                <article class="note note-green reveal">
+                    <span class="pushpin"></span>
+                    <div class="note-ic">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                             <polyline points="14 2 14 8 20 8"></polyline>
                             <line x1="16" y1="13" x2="8" y2="13"></line>
                             <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
                         </svg>
                     </div>
-                    <h3>Attendance & Results</h3>
-                    <p>View the exact date range of attendance updates and access your Mid-Sem results directly from the
-                        dashboard.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                    <h3>Secure Attendance</h3>
+                    <p>Dynamic codes, 30-second locks, and native call-blocking for foolproof, proxy-free attendance.</p>
+                </article>
+
+                <article class="note note-yellow reveal">
+                    <span class="pushpin"></span>
+                    <div class="note-ic">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
                         </svg>
                     </div>
-                    <h3>Privacy & Security</h3>
-                    <p>Secure password change option now available in settings. Keep your academic data safe and
-                        private.</p>
-                </div>
-                <div class="feature-card feature-wide">
-                    <div class="feature-icon">
+                    <h3>Bunk Calculator</h3>
+                    <p>Instantly see how missing or attending your next class will impact your overall percentage.</p>
+                </article>
+
+                <article class="note note-blue reveal">
+                    <span class="pushpin"></span>
+                    <div class="note-ic">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                         </svg>
                     </div>
-                    <h3>Performance & UI Enhancements</h3>
-                    <p>Modern glassmorphic interface, dynamic weather-based headers, and automatic dimming of past
-                        lectures. Full <strong>Web / PWA</strong> support with "Add to Home
-                        Screen".</p>
+                    <h3>Fast & Everywhere</h3>
+                    <p>Weather-aware headers and a native Android app so you can check stats on the go.</p>
+                </article>
+
+                <article class="note note-purple reveal">
+                    <span class="pushpin"></span>
+                    <div class="note-ic">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                    </div>
+                    <h3>Never miss a thing</h3>
+                    <p>Push notifications for announcements, mid-sem results, and deadlines keep you ahead.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== Your week (timetable demo) ===== -->
+        <section class="section week" id="week">
+            <div class="section-head reveal">
+                <span class="kicker">your week, sorted</span>
+                <h2 class="section-title">Reads just like your <span class="hl hl-blue">timetable.</span></h2>
+                <p class="section-lead">Because it basically is one — colour-coded, always in sync, never out of date.
+                </p>
+            </div>
+
+            <div class="timetable reveal">
+                <div class="tt-head">
+                    <span></span>
+                    <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span class="tt-today">Fri</span>
                 </div>
+                <div class="tt-row">
+                    <span class="tt-time">10:55</span>
+                    <span class="tt-slot"></span>
+                    <span class="tt-slot"><span class="cls c-blue">DAA</span></span>
+                    <span class="tt-slot"></span>
+                    <span class="tt-slot"><span class="cls c-green">DBMS</span></span>
+                    <span class="tt-slot"><span class="cls c-blue">COA<small>A119</small></span></span>
+                </div>
+                <div class="tt-row">
+                    <span class="tt-time">11:50</span>
+                    <span class="tt-slot"><span class="cls c-purple">Python</span></span>
+                    <span class="tt-slot"></span>
+                    <span class="tt-slot"><span class="cls c-orange">DM Lab</span></span>
+                    <span class="tt-slot"></span>
+                    <span class="tt-slot"><span class="cls c-orange">DM Lab<small>A119</small></span></span>
+                </div>
+                <div class="tt-row">
+                    <span class="tt-time">02:30</span>
+                    <span class="tt-slot"><span class="cls c-green">DBMS</span></span>
+                    <span class="tt-slot"><span class="cls c-purple">Python</span></span>
+                    <span class="tt-slot"></span>
+                    <span class="tt-slot"><span class="cls c-blue">COA</span></span>
+                    <span class="tt-slot"></span>
+                </div>
+                <span class="tt-note">↑ tap any class in the app to see room, faculty &amp; notes</span>
+            </div>
+        </section>
+
+        <!-- ===== Screens (polaroids) ===== -->
+        <section class="section" id="screens">
+            <div class="section-head reveal">
+                <span class="kicker">snapshots</span>
+                <h2 class="section-title">Straight from the <span class="hl hl-yellow">app.</span></h2>
+                <p class="section-lead">Real screens — drag them around like photos on a corkboard.</p>
+            </div>
+
+            <div class="gallery" id="gallery">
+                <div class="gallery-track" id="galleryTrack">
+                    <figure class="polaroid"><img src="APP%20SCREEN%20SHOTS/Screenshot_20260703_120549.png"
+                            alt="Login screen" loading="lazy">
+                        <figcaption>secure sign-in</figcaption>
+                    </figure>
+                    <figure class="polaroid"><img src="APP%20SCREEN%20SHOTS/Screenshot_20260703_121124.png"
+                            alt="Timetable screen" loading="lazy">
+                        <figcaption>my timetable</figcaption>
+                    </figure>
+                    <figure class="polaroid"><img src="APP%20SCREEN%20SHOTS/Screenshot_20260703_120836.png"
+                            alt="Holidays screen" loading="lazy">
+                        <figcaption>holidays &amp; events</figcaption>
+                    </figure>
+                    <figure class="polaroid"><img src="APP%20SCREEN%20SHOTS/Screenshot_20260703_120824.png"
+                            alt="Academic calendar" loading="lazy">
+                        <figcaption>academic calendar</figcaption>
+                    </figure>
+                    <figure class="polaroid"><img src="APP%20SCREEN%20SHOTS/Screenshot_20260703_120812.png"
+                            alt="Mid sem results" loading="lazy">
+                        <figcaption>mid-sem results</figcaption>
+                    </figure>
+                    <figure class="polaroid"><img src="APP%20SCREEN%20SHOTS/Screenshot_20260703_120855.png"
+                            alt="Study materials" loading="lazy">
+                        <figcaption>study materials</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <p class="drag-hint">← drag to flip through →</p>
+        </section>
+
+        <!-- ===== How it works (checklist) ===== -->
+        <section class="section">
+            <div class="section-head reveal">
+                <span class="kicker">get started</span>
+                <h2 class="section-title">Three ticks and you’re <span class="hl hl-green">set.</span></h2>
+            </div>
+            <ul class="checklist reveal">
+                <li class="task">
+                    <span class="check"></span>
+                    <div>
+                        <h3>Get the app</h3>
+                        <p>Grab MyGCET from Google Play, or launch the web app instantly on iOS &amp; desktop.</p>
+                    </div>
+                </li>
+                <li class="task">
+                    <span class="check"></span>
+                    <div>
+                        <h3>Sign in with GMS</h3>
+                        <p>Use your existing GMS portal credentials — no new account, no setup.</p>
+                    </div>
+                </li>
+                <li class="task">
+                    <span class="check"></span>
+                    <div>
+                        <h3>Stay on track</h3>
+                        <p>Attendance, timetable, results and deadlines — synced and ready every morning.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ===== Get the app (notice board) ===== -->
+        <section class="section" id="get">
+            <div class="board reveal">
+                <span class="tape tape-l"></span>
+                <span class="tape tape-r"></span>
+                <span class="coming-stamp">Coming&nbsp;Soon</span>
+
+                <img src="assets/App%20Logo.png" alt="MyGCET" class="board-logo">
+                <span class="kicker">download mygcet</span>
+                <h2 class="section-title">Your smartest semester<br>starts here.</h2>
+                <p class="section-lead">Free, private, and built by students — for students.</p>
+
+                <div class="board-actions">
+                    <div class="store is-soon" role="button" aria-disabled="true" title="Coming soon to Google Play">
+                        <img src="assets/playstore.png" width="26" height="26" alt="Google Play logo" aria-hidden="true">
+                        <span class="store-text"><small>Coming soon on</small><strong>Google Play</strong></span>
+                    </div>
+                    <a href="https://mygcet.vercel.app/" class="store is-web" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true">
+                            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                        <span class="store-text"><small>Available now on</small><strong>Web&nbsp;/&nbsp;iOS</strong></span>
+                    </a>
+                </div>
+
+                <p class="board-note">
+                    The Android app is on its way to the Play Store — use the web app meanwhile, it installs to your home
+                    screen and works offline.
+                </p>
             </div>
         </section>
 
     </main>
 
-    <!-- Minimal Footer -->
+    <!-- ===== Footer ===== -->
     <footer class="footer">
         <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="assets/App%20Logo.png" alt="" class="footer-logo">
+                <div>
+                    <strong>MyGCET</strong>
+                    <span>Everything GCET. One App.</span>
+                </div>
+            </div>
+            <nav class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#screens">Screens</a>
+                <a href="#get">Get the app</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="mailto:mygcet.official.53@gmail.com">Contact</a>
+            </nav>
+        </div>
+        <div class="footer-sign">
             <span>© 2026 MyGCET</span>
-            <span class="dot">•</span>
-            <a href="privacy.html">Privacy Policy</a>
-            <span class="dot">•</span>
-            <a href="mailto:mygcet.official.53@gmail.com">mygcet.official.53@gmail.com</a>
-            <span class="dot">•</span>
-            <span>By <strong>Abdullah Kapadia</strong> & <strong>Yusuf Gundarwala</strong></span>
+            <span class="made">made with <em>♥</em> by <strong>Abdullah Kapadia</strong> &amp; <strong>Yusuf
+                    Gundarwala</strong></span>
         </div>
     </footer>
 
+    <button class="to-top" id="toTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </button>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
